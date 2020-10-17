@@ -11,7 +11,19 @@
 
 マイグレーション実行
 
-    $ migrate マイグレーション実行
+    $ migrate 
+
+マイグレーション実行＆シーディング実行
+
+    $ migrate --seed
+
+マイグレーションロールバック（最後に実行したマグレーションを元に戻す）
+
+    $ migrate:rollback
+
+全てのマイグレーションをロールバックする
+
+    $ migrate:reset
 
 モデル作成
 
@@ -42,7 +54,13 @@ Mailableクラスを継承したBareMailクラスを作る（メールを取り�
     $ make:notification PasswordResetNotification 通知クラスを作成
 
 ファクトリー作成（モデルと対応させる）
+
     $ make:factory ArticleFactory —-model=Article
 
 テスト作成
+
     $ make:test ArticleControllerTest
+
+tinker起動
+
+    php artisan tinker

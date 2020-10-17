@@ -67,11 +67,11 @@ commands:
           key: npm-cache-{{ checksum "package-lock.json" }}
           paths:
             - node_modules
-  migration:
+  migration-seeding:
     steps:
       - run:
-          name: Migration
-          command: php artisan migrate
+          name: Migration & Seeding
+          command: php artisan migrate --seed
   test-unittest:
     steps:
       - run:
@@ -93,7 +93,7 @@ jobs:
       - npm-ci
       - save-cache-npm
       - npm-run-dev
-      - migration
+      - migration-seeding
       - test-unittest
   deploy:
     docker:
@@ -117,5 +117,6 @@ workflows:
             branches:
               only:
                 - master
-
 ```
+
+command名に&は使えない（migration&seedingにしたらエラーになった）
