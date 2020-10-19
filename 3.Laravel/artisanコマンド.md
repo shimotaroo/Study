@@ -4,6 +4,10 @@
 
     $ make:controller ArticleController
 
+コントローラー作成（主要7アクションを自動的に生成）
+
+    $ make:controller ArticleController --resource
+
 
 マイグレーションファイル作成
 

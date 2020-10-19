@@ -233,11 +233,6 @@ laravel-quest/config/app.php
 ```
 
 # RESTful API
-YouTube API では、URLとHTTPメソッド（GETなど）を用いて動画のタイトルなどを取得してきました。
-
-HTTPメソッドを使って決まったルールでアプリケーションにアクセスできるようにする考え方をREST（REpresentational State Transfer）といい、
-その考え方に基づいて作られた YouTube API のような外部アプリケーションとの接続のルールを
-RESTful APIといいます。
 
 少し発展的な内容にはなりますが、学んでいただくことで
 Webサービスでは現状主流である「自社アプリケーションを他社サービスに連携させる」という
@@ -245,3 +240,20 @@ Webサービスでは現状主流である「自社アプリケーションを�
 
 まず、初めにRouterから作っていきましょう。
 前提として、URLの末尾に「/rest」を付けると、RESTful APIを扱えるようにしていきます。
+
+
+web.php
+
+```php
+// RESTful API
+Route::resource('/rest', 'RestappController', ['only' => ['index', 'show', 'create', 'store', 'destroy']]);
+```
+
+``` 
+|        | POST      | rest                          | rest.store                | App\Http\Controllers\RestappController@store                                  | web                                                  |
+|        | GET|HEAD  | rest                          | rest.index                | App\Http\Controllers\RestappController@index                                  | web                                                  |
+|        | GET|HEAD  | rest/create                   | rest.create               | App\Http\Controllers\RestappController@create                                 | web                                                  |
+|        | GET|HEAD  | rest/{rest}                   | rest.show                 | App\Http\Controllers\RestappController@show                                   | web                                                  |
+|        | DELETE    | rest/{rest}                   | rest.destroy              | App\Http\Controllers\RestappController@destroy                                | web                                                  |
+```
+
