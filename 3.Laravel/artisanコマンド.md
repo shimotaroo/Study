@@ -1,5 +1,13 @@
 # artisanコマンド
 
+.envのAPP_ENVを表示（デフォルトはlocal）
+
+    $ env
+
+DBとの接続状況を確認
+
+    $ migrate:status
+
 コントローラー作成
 
     $ make:controller ArticleController
@@ -8,14 +16,25 @@
 
     $ make:controller ArticleController --resource
 
+シングルアクションコントローラー作成
 
-マイグレーションファイル作成
+    php artisan make:controller ArticleController --invokable
+
+マイグレーションファイル作成（テーブル作成）
 
     $ make:migration create_articles_table —-create=articles
+
+マイグレーションファイル作成（カラム追加等変更）
+
+    $ make:migration add_column_articles_table —-table=articles
 
 マイグレーション実行
 
     $ migrate 
+
+現在のテーブルを全削除してマイグレーションやり直し
+
+     $ migrate:fresh
 
 マイグレーション実行＆シーディング実行
 
@@ -35,7 +54,7 @@
 
 モデルとファクトリーを同時に作る
 
-    $ make:model Article —-factory　モデルとfactoryを同時に作る
+    $ make:model Article —-factory
 
 ルーティングの一覧を表示
 
@@ -47,7 +66,7 @@
 
 ポリシー作成
 
-    $ make:policy ArticlePolicy --model=Article　ポリシーの作成
+    $ make:policy ArticlePolicy --model=Article
 
 Mailableクラスを継承したBareMailクラスを作る（メールを取り扱うクラス）
 
