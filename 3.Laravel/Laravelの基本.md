@@ -256,4 +256,3 @@ Route::resource('/rest', 'RestappController', ['only' => ['index', 'show', 'crea
 |        | GET|HEAD  | rest/{rest}                   | rest.show                 | App\Http\Controllers\RestappController@show                                   | web                                                  |
 |        | DELETE    | rest/{rest}                   | rest.destroy              | App\Http\Controllers\RestappController@destroy                                | web                                                  |
 ```
-

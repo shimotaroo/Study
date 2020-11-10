@@ -1,0 +1,3 @@
+- 初期でファサード登録されてるnamespaceは略称で使える（ex: use DB;）
+- モデルは/app/Model/配下に作成
+- メソッドはPHPDocで書く
