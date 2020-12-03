@@ -56,6 +56,11 @@ DBとの接続状況を確認
 
     $ php artisan db:seed --class=UsersTableSeeder
 
+シーダーファイル作成
+
+    $ php artisan make:seeder UserSeeder
+    （UserTableSeederにする場合もアリ）
+
 モデル作成
 
     $ php artisan make:model Article モデルの作成
