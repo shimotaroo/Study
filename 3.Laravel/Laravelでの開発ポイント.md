@@ -10,3 +10,4 @@
 - middlewareの付与の仕方
     1. Controllerのコンストラクタで書く
     2. web.phpで`->middleware('auth')`をつける
+- 外部キー制約は参照元のテーブルの`id`カラムしか使えない？

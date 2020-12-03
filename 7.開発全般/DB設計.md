@@ -5,3 +5,5 @@
 - IDカラムは`bigIncrement`ではなくて`increment`でOK
 - デフォルト値はなるべく空文字か0にする（なるべく`null`は使わない）
 - 全て`stirng`を使わず、`char`、`int`、`decimal`を使うことでDBへの負荷を減らすことができる
+- テーブル名をカラムに入れない方がスッキリする
+    - 例：usersテーブルで`user_name`ではなくて`name`にする
