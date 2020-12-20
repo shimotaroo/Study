@@ -1,3 +1,4 @@
+# 開発ポイント（メモ）
 -  初期でファサード登録されてるnamespaceは略称で使える（ex: use DB;）
 - モデルは`/app/Model/`配下に作成（Modelディレクトリ作成）
 ただしUser.phpはそのまま移動させない方が良い→Authとかでデフォルトのnamespaceを使用しているから
@@ -7,7 +8,15 @@
 - バリデーションもControllerに書かない方がベター
 - ルーティングの優先度に注意する（[Laravelのルーティング優先度でつまづいた話](https://qiita.com/dhiki1234/items/dcb2d2bc17d11e1f4565)）
 - クラス内でしか使わないメソッドは`private`にして、`_メソッド名`にする（これはPHP？Laravel？のどっちの決まり？）
+```php
+private function _getCheckboxData()
+{
+
+}
+```
 - middlewareの付与の仕方
     1. Controllerのコンストラクタで書く
     2. web.phpで`->middleware('auth')`をつける
 - 外部キー制約は参照元のテーブルの`id`カラムしか使えない？
+- DBへの登録・更新処理の場合は`try/catch(例外処理)`と`トランザクション`を使う
+- 関数の引数が多い場合は配列に入れて関数に渡してあげる（4つ以上が目安）

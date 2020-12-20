@@ -4,6 +4,7 @@
 - ライブラリ(`(goody/csv)`)を使う
 ## サンプルコード（`\SplFileObject`クラスを使う）
 ```php
+
 ```
 ## 参考情報
 ### PHP文字コード関連
@@ -15,3 +16,32 @@
 
 ### ライブラリ(`(goody/csv)`)を使う
 - [CSVインポート機能の作成](https://laraweb.net/tutorial/5906/)
+
+## 他サンプルコード
+このコードは途中までの実装であり実際に使ったことない。
+```php
+$file = new \SplFileObject($request->file('csv')->path());
+
+//tmpファイルを/storage/app/csvに保存（ファイル名は年月日.csvとする）
+$tmpFile = $request->file('csv');
+if ($tmpFile) {
+    $filePath = storage_path('app/csv');
+    $fileName = date('Ymd').'.csv';
+    $tmpFile->move($filePath, $fileName);
+}
+
+//生データ読み込み
+$file->setFlags(
+    \SplFileObject::READ_CSV |
+    \SplFileObject::READ_AHEAD |
+    \SplFileObject::SKIP_EMPTY |
+    \SplFileObject::DROP_NEW_LINE
+);
+
+foreach ($file as $index => $line) {
+    if($index === 0) {
+        continue;
+    }
+    var_dump(mb_convert_encoding($line, 'UTF-8', 'SJIS-win'));
+}
+```
