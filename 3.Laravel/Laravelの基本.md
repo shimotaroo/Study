@@ -256,3 +256,18 @@ Route::resource('/rest', 'RestappController', ['only' => ['index', 'show', 'crea
 |        | GET|HEAD  | rest/{rest}                   | rest.show                 | App\Http\Controllers\RestappController@show                                   | web                                                  |
 |        | DELETE    | rest/{rest}                   | rest.destroy              | App\Http\Controllers\RestappController@destroy                                | web                                                  |
 ```
+
+## バージョン指定してPJ作成
+
+- 6.*系（blogはPJ名）
+```
+composer create-project --prefer-dist laravel/laravel blog "6.*"
+```
+
+## Laradockでの環境構築
+
+- [Vue + Vue Router + Vuex + Laravel 写真共有アプリチュートリアルの環境をLaradockで構築する](https://qiita.com/shonansurvivors/items/8ac850ff794a40d198f3#comments)
+
+- Postgresコンテナが立ち上がってもすぐ停止８（Exit）するエラー
+    - PJを作り直す
+    - ladadockの.envの設定`DATA_PATH_HOST=~/.laradock/data`を正しく設定する
