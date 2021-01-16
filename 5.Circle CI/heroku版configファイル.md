@@ -119,4 +119,4 @@ workflows:
                 - master
 ```
 
-command名に&は使えない（migration&seedingにしたらエラーになった）
+- command名に&は使えない（migration&seedingにしたらエラーになった）

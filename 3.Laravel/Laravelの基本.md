@@ -271,3 +271,16 @@ composer create-project --prefer-dist laravel/laravel blog "6.*"
 - Postgresコンテナが立ち上がってもすぐ停止８（Exit）するエラー
     - PJを作り直す
     - ladadockの.envの設定`DATA_PATH_HOST=~/.laradock/data`を正しく設定する
+
+## .css、.jsファイルの読み込み
+Larvalでは「js」ファイルや「css」ファイルの読み込み先のデフォルトのディレクトリが「public」になっている
+
+```
+<link href="/css/app.css" rel="stylesheet">
+<script src="/js/home.js"></script>
+```
+例）/css/app.css　= public/css/app.css
+
+## Carbon
+- 日付を操作する際には、DateTimeクラスがありますが、Laravelでは日付を操作するライブラリーとしてCarbonを標準で搭載
+

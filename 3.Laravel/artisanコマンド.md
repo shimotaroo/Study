@@ -4,6 +4,10 @@
 
     $ php artisan env
 
+Laravelの内蔵サーバーを起動（PHPのビルドインサーバー）
+
+    $ php artisan serve
+
 DBとの接続状況を確認
 
     $ php artisan migrate:status
@@ -88,6 +92,10 @@ Mailableクラスを継承したBareMailクラスを作る（メールを取り�
 通知クラス作成
 
     $ php artisan make:notification PasswordResetNotification 通知クラスを作成
+
+ファクトリー作成
+
+    $ php artisan make:factory ArticleFactory
 
 ファクトリー作成（モデルと対応させる）
 

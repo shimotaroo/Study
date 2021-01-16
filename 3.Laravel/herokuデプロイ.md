@@ -78,6 +78,7 @@ DB_DATABASE=d1td59no8t0hfb
 DB_USERNAME=xlpmrjkszonscc
 DB_PASSWORD=c2d738b6bb53d76a921e1c472ea2105d7d12e827158c3c18048c2bb6ea0da72b
 ```
+↑herokuのサイトのOverview>Postgresのボタン>Setting>View Credentials...からでも見れる
 
 他に
 AWS、Google API、Twitter API用の環境変数も

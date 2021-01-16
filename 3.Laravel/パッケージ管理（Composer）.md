@@ -46,3 +46,9 @@ package.jsonに記述されたパッケージのインストールを行う
 $ npm install
 ```
 
+## その他のコマンド
+
+```
+Laravelの配列や文字列などの操作を行いやすくするためのライブラリをインストール
+composer require laravel/helpers
+```
