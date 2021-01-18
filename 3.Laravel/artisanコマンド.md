@@ -40,6 +40,10 @@ DBとの接続状況を確認
 
      $ php artisan migrate:fresh
 
+データベース全体を作り直す
+
+     $ php artisan migrate:refresh
+
 マイグレーション実行＆シーディング実行
 
     $ php artisan migrate --seed
