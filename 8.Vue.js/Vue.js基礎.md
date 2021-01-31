@@ -171,3 +171,47 @@ const app = new Vue({
 ## 記事
 - [vue.js の {{name}} とかが html に表示されるのを防ぐ(v-cloak)](https://qiita.com/macoshita/items/630e6bf1b6fa068790a3)
 - [他のフレームワークとの比較](https://jp.vuejs.org/v2/guide/comparison.html)
+
+## prpps
+
+- 親コンポーネント：ケバブケース（total-number)
+- 子コンポーネント：キャメルケース（totalNumber)
+
+渡し方
+```js
+// 親コンポーネント
+// total-numberというpropsの値をnumberとして子に渡す
+<LikeNumber :total-number="number" />
+
+// 子コンポーネント
+export default {
+  props: {
+    TotalNumber: {
+      type: Number,
+      required: true,
+      default: 10
+    }
+  }
+}
+```
+
+## $emit
+
+- `$emit('渡すデータの名前（任意）', '渡すデータの値（中身）')`
+- 親コンポーネントのイベントを発火させる起動スイッチ
+- 親、子コンポーネント共にケバブケース
+
+渡し方
+```js
+// 子
+methods: {
+  increment() {
+    this.$emit("my-click", this.totalNumber + 1);
+  }
+}
+
+// 親
+// @:my-clickでもOK
+<LikeNumber v-on:my-click="$event" />
+
+```

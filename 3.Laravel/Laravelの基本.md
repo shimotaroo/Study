@@ -260,8 +260,16 @@ Route::resource('/rest', 'RestappController', ['only' => ['index', 'show', 'crea
 ## バージョン指定してPJ作成
 
 - 6.*系（blogはPJ名）
+
+カレントディレクトリにプロジェクト名のディレクトリを作成
 ```
-composer create-project --prefer-dist laravel/laravel blog "6.*"
+composer create-project --prefer-dist laravel/laravel {プロジェクト名} "6.*"
+composer create-project --prefer-dist "laravel/laravel=6.*" {プロジェクト名}
+```
+
+カレントディレクトリにLaravelをインストール
+```
+composer create-project --prefer-dist "laravel/laravel=6.*" .
 ```
 
 ## Laradockでの環境構築
