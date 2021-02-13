@@ -292,3 +292,15 @@ Larvalでは「js」ファイルや「css」ファイルの読み込み先のデ
 ## Carbon
 - 日付を操作する際には、DateTimeクラスがありますが、Laravelでは日付を操作するライブラリーとしてCarbonを標準で搭載
 
+## デフォルトのusersテーブル
+
+### `email_verified_at`カラム
+
+- ユーザー登録時にメールアドレスを確認する場合に使うカラム
+- カラムには「メールアドレスを確認した日時」を保存する
+- 参考：https://readouble.com/laravel/5.7/ja/verification.html
+
+### `remember_token`カラム
+
+- 継続ログイン機能のためのトークンを保存するカラム
+- 参考：https://readouble.com/laravel/6.x/ja/authentication.html

@@ -213,5 +213,8 @@ methods: {
 // 親
 // @:my-clickでもOK
 <LikeNumber v-on:my-click="$event" />
-
 ```
+
+## Vue3とTypeScript
+
+- https://reffect.co.jp/vue/vue3-typescript#TypeScript
